@@ -17,8 +17,21 @@
     max-width: 540px;
     background-color: #fff;
     margin: 100px auto 20px;
-    padding: 40px 30px 70px;
+    padding: 40px 30px 50px;
     border-radius: 10px;
+    box-shadow: 2px -3px 26px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px -3px 26px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px -3px 26px -1px rgba(0, 0, 0, 0.75);
+}
+
+@media screen and (max-width: 280px) {
+    .todo-app {
+        padding: 20px 15px 30px;
+    }
+
+    .todo-app .title {
+        font-size: 20px;
+    }
 }
 
 .todo-app .title {
@@ -51,19 +64,52 @@
     padding: 10px;
 }
 
-.row .add-btn{
+@media screen and (max-width: 280px) {
+    .row .form-control {
+        width: 90%;
+    }
+}
+
+.row .add-btn {
     border: none;
     outline: none;
     padding: 16px 50px;
-    background-color:#ff5945;
+    background-color: #ff5945;
     color: #fff;
     font-size: 16px;
     border-radius: 40px;
     cursor: pointer;
+    transition: .3s all ease-in-out;
+}
+.row .add-btn:hover{
+    background-color: #de4c3a;;
+    transition: .3s all ease-in-out;
+}
+
+@media screen and (max-width: 420px) {
+    .row .add-btn {
+        padding: 16px 30px;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .row .add-btn {
+        padding: 16px 20px;
+    }
 }
 
 
-.list li{
+.list {
+    max-height: 528px;
+    overflow: auto;
+}
+
+.list::-webkit-scrollbar {
+    width: 0;
+}
+
+
+.list li {
     list-style: none;
     font-size: 17px;
     cursor: pointer;
@@ -73,7 +119,7 @@
     transition: .3s all ease-in-out;
 }
 
-.list li:before{
+.list li:before {
     content: '';
     position: absolute;
     width: 28px;
@@ -87,13 +133,13 @@
     transition: .3s all ease-in-out;
 }
 
-.list li.checked{
+.list li.checked {
     color: #969696;
     transition: .3s all ease-in-out;
     text-decoration: line-through;
 }
 
-.list li.checked:before{
+.list li.checked:before {
     content: '';
     position: absolute;
     width: 28px;
@@ -107,7 +153,7 @@
     transition: .3s all ease-in-out;
 }
 
-.list li span{
+.list li span {
     position: absolute;
     right: 0;
     top: 5px;
@@ -121,7 +167,7 @@
     transition: .3s all ease-in-out;
 }
 
-.list li span:hover{
+.list li span:hover {
     transition: .3s all ease-in-out;
     background-color: #edeef0;
 }
